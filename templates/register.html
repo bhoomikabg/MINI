@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Create Account</h1>
+
+      <!-- Flash messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form method="POST" action="/register">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Choose a username" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter a password" required />
+
+        <button type="submit">Register</button>
+      </form>
+
+      <div class="note">
+        Already have an account? <a href="/login">Login here</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Secure Portal | Honeypot Prototype
+  </div>
+</body>
+</html>

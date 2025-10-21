@@ -1,0 +1,147 @@
+/* static/style.css */
+body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f4f7fb; margin:0; padding:0; }
+.container{ display:flex; min-height:100vh; align-items:center; justify-content:center; }
+.card{ background:white; padding:28px; border-radius:10px; box-shadow:0 8px 24px rgba(12,15,20,0.08); width:360px; }
+h1{ margin:0 0 12px 0; font-size:20px; }
+label{ display:block; margin-top:10px; font-size:12px; color:#444; }
+input{ width:100%; padding:10px; margin-top:6px; border-radius:6px; border:1px solid #e6e9ef; box-sizing:border-box; }
+button{ margin-top:16px; width:100%; padding:10px; border-radius:8px; background:#2563eb; color:white; border:none; font-weight:600; }
+.alert{ background:#fff4f4; color:#8b1a1a; padding:8px; border-radius:6px; margin-bottom:8px; }
+.note{ margin-top:12px; color:#666; font-size:12px; }
+a{ color:#2563eb; text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+/* static/style.css — Dark mode friendly for the honeypot login */
+/* Uses neutral dark background, soft card, clear focus states, and readable text. */
+
+:root{
+  --bg: #0f1720;           /* page background */
+  --panel: #0b1220;        /* card background */
+  --muted: #9aa4b2;        /* secondary text */
+  --text: #e6eef6;         /* primary text */
+  --accent: #4f9cff;       /* primary button / links */
+  --danger: #ff6b6b;       /* error bg */
+  --input-bg: #0f1728;     /* input background */
+  --input-border: #203040; /* subtle input border */
+  --card-shadow: rgba(2,6,23,0.6); /* soft shadow */
+}
+
+/* Respect system preference but default to dark */
+@media (prefers-color-scheme: light) {
+  /* if user prefers light, we'll still use dark by default, but you may override here */
+}
+
+/* Page layout */
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: linear-gradient(180deg,var(--bg), #07101a); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+.container{ display:flex; min-height:100vh; align-items:center; justify-content:center; padding:24px; }
+
+/* Card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  width:380px;
+  padding:28px;
+  border-radius:12px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Headings & text */
+h1{ margin:0 0 10px 0; font-size:20px; color:var(--text); letter-spacing: -0.2px; }
+label{ display:block; margin-top:12px; font-size:13px; color:var(--muted); }
+.note{ margin-top:14px; color:var(--muted); font-size:12px; }
+
+/* Inputs */
+input[type="text"], input[type="password"], textarea {
+  width:100%;
+  padding:11px 12px;
+  margin-top:6px;
+  border-radius:8px;
+  border:1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text);
+  outline: none;
+  font-size:14px;
+  transition: box-shadow .12s ease, border-color .12s ease;
+}
+input::placeholder, textarea::placeholder { color: rgba(230,238,246,0.45); }
+
+/* Focus state */
+input:focus, textarea:focus {
+  box-shadow: 0 6px 20px rgba(79,156,255,0.12);
+  border-color: rgba(79,156,255,0.9);
+}
+
+/* Button */
+button {
+  margin-top:16px;
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  background: linear-gradient(180deg, var(--accent), #2f7be6);
+  color: white;
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+  letter-spacing: .2px;
+  box-shadow: 0 6px 18px rgba(31,74,143,0.12);
+  transition: transform .06s ease, box-shadow .08s ease, opacity .08s ease;
+}
+button:active { transform: translateY(1px); }
+button:disabled { opacity:.6; cursor:not-allowed; }
+
+/* Alert / error */
+.alert {
+  background: rgba(255,107,107,0.12);
+  border: 1px solid rgba(255,107,107,0.18);
+  color: var(--danger);
+  padding:8px;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+/* Links */
+a { color: var(--accent); text-decoration: none; font-weight:600; }
+
+/* Small helpers */
+.small { font-size:13px; color:var(--muted); margin-top:8px; }
+
+/* Responsive */
+@media (max-width:420px){
+  .card{ width:100%; padding:20px; border-radius:10px; }
+  h1{ font-size:18px; }
+}
+
+/* Optional subtle decorative footer */
+.footer {
+  text-align:center;
+  margin-top:18px;
+  font-size:12px;
+  color:rgba(230,238,246,0.6);
+}
+
+/* Accessibility: high contrast focus for keyboard users */
+input:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 3px solid rgba(79,156,255,0.16);
+  outline-offset: 2px;
+}
+a:hover{ text-decoration:underline; }
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}

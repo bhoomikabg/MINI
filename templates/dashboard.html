@@ -1,0 +1,19 @@
+<!-- templates/dashboard.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Welcome, {{ user }}</h1>
+      <p>This is the protected dashboard — visible only to authenticated users.</p>
+      <p><small>All activity is logged for security and research purposes.</small></p>
+      <a href="/login">Sign out</a>
+    </div>
+  </div>
+</body>
+</html>
