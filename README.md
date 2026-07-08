@@ -39,7 +39,6 @@ Web-Honeypot/
 │   ├── css/
 │   ├── js/
 │   └── images/
-├── dashboard/
 ├── requirements.txt
 └── README.md
 ```
@@ -51,13 +50,13 @@ Web-Honeypot/
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/web-honeypot.git
+git clone https://github.com/bhoomikabg/MINI.git
 ```
 
 Move into the project directory
 
 ```bash
-cd web-honeypot
+cd MINI
 ```
 
 Install dependencies
